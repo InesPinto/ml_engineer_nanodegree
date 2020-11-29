@@ -1,0 +1,8 @@
+In SageMaker, a model is a collection of information that describes how to perform inference. For the most part, this comprises two very important pieces.
+
+The first is the container that holds the model inference functionality. 
+For different types of models this code may be different but for simpler models and models provided by Amazon this is typically the same container that was used to train the model.
+
+The second is the model artifacts. 
+These are the pieces of data that were created during the training process. 
+For example, if we were fitting a linear model then the coefficients that were fit would be saved as model artifacts.
