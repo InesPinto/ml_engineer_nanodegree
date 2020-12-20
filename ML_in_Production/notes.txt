@@ -1,0 +1,15 @@
+In SageMaker, a model is a collection of information that describes how to perform inference. For the most part, this comprises two very important pieces.
+
+The first is the container that holds the model inference functionality. 
+For different types of models this code may be different but for simpler models and models provided by Amazon this is typically the same container that was used to train the model.
+The second is the model artifacts. 
+These are the pieces of data that were created during the training process. 
+For example, if we were fitting a linear model then the coefficients that were fit would be saved as model artifacts.
+
+
+What happens when a model is fit using SageMaker?
+
+When a model is fit using SageMaker, the process is as follows.
+First, a compute instance (basically a server somewhere) is started up with the properties that we specified.
+Next, when the compute instance is ready, the code, in the form of a container, that is used to fit the model is loaded and executed. When this code is executed, it is provided access to the training (and possibly validation) data stored on S3.
+Once the compute instance has finished fitting the model, the resulting model artifacts are stored on S3 and the compute instance is shut down.
